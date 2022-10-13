@@ -1,19 +1,26 @@
-import react, {useState} from "react";
+import react, {useState, useEffect} from "react";
 import { Formik, Form, Field } from 'formik';
-import { useForm } from 'react-hook-form';
 import { Button, Toast } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from "../../assets/battelan.png"
-import { addUser, getUser } from "../../app/features/user/userSlice";
+import { addUser } from "../../app/features/user/userReducer";
 import { useSelector, useDispatch } from 'react-redux'
 import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom"
 
 const Login = () => {
-    const {handleSubmit, register, formState : {errors}} = useForm()
-    const user = useSelector((state) => state.user)
+    const user = useSelector((state) => state)
     const [isLogin, setIsLogin] = useState(true);
     const [userData, setUserData] = useState();
     const dispatch = useDispatch()
+    let navigate = useNavigate();
+
+    useEffect(() => {
+        if(user.isAdmin === false || user.isAdmin === true){
+            const isAmdin = user.isAdmin
+            navigate("/logged", isAmdin )
+        }
+      }, [userData]);
 
     const handleNav = (props) => {
         if(props === "login"){
@@ -29,6 +36,7 @@ const Login = () => {
 
 
     const authenticate = async (values) => {
+        try{
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -39,24 +47,35 @@ const Login = () => {
                 .then(data => {
                     const payload = {
                         email:data.user.email,
-                        token:data.accessToken
+                        token:data.accessToken,
+                        isAdmin: data.user.isAdmin
                     }
                     setUserData(payload)
                     dispatch(addUser(payload))
                 });
+            toast.success("Connexion réussie")
+            
+        }catch(error){
+            toast.error("Connexion refusée")
+        }
     };
 
     const createUser = async (values) => {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({email: values.emailSign, password: values.passwordSign })
-        };
-        await fetch('http://localhost:3030/users', requestOptions)
-            .then(response => response.json())
-            .then(data => {
-                setIsLogin(true)
-            });       
+        try{
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({email: values.emailSign, password: values.passwordSign })
+            };
+            await fetch('http://localhost:3030/users', requestOptions)
+                .then(response => response.json())
+                .then(data => {
+                    setIsLogin(true)
+                });       
+            toast.success("Inscription réussie")
+        }catch(error){
+            toast.error("une erreur est survenue") 
+        }
     };
 
     return(
@@ -86,10 +105,8 @@ const Login = () => {
                         onSubmit={(values, { setSubmitting }) => {
                             try{
                                 authenticate(values)
-                                toast.success("Connexion réussi")
                             }catch(error){
                                 console.log(error)
-                                toast.error("Une erreur est survenue")
                             }
                         }}
                         >
@@ -142,10 +159,8 @@ const Login = () => {
                         onSubmit={(values, { setSubmitting }) => {
                             try{
                                 createUser(values)
-                                toast.success("Inscription réussi")
                             }catch(error){
                                 console.log(error)
-                                toast.error("Une erreur est survenue")
                             }
                         }}
                         >

@@ -22,6 +22,15 @@
   margin: auto;
 }
 
+.logoGroup{
+  display: flex;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  justify-content: center;
+  width: 300px;
+  margin: auto;
+}
+
 .formField{
   background-color:"red";
   border-radius: 10px;
@@ -57,4 +66,222 @@
   font-size: large;
   margin-bottom: 20px;
   cursor: pointer;
+}
+
+.imgLogo{
+  border-color: rgb(27, 27, 27);
+  border-style: solid;
+  border-bottom: 1px;
+  border-top: 1px;
+  border-left: 1px;
+  padding-right: 15px;
+
+}
+
+.navBar{
+  flex-direction: row !important;
+}
+
+.navItem{
+  margin-right: 20px;
+}
+
+.carousel{
+  margin: auto;
+  width: 60%;
+}
+
+.text{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.title{
+  font-size: larger;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.tirageContainer{
+
+  border-radius: 2%;
+  padding: 3%;
+  background-color: #212529;
+  display: flex;
+  flex-direction: row;
+  margin-right: 25%;
+  margin-left: 25%;
+  justify-content: space-around;
+}
+
+.tirageTitle{
+  display: flex;
+  justify-content: center;
+  margin-left: 1%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 400%;
+  color: rgb(22, 22, 22);
+  font-family: blankRiver;
+}
+
+.tirageSecondary{
+  margin-bottom: 12%;
+  font-size: 300%;
+  color: rgba(231, 109, 53, 0.856);
+  font-family: blankRiver;
+}
+
+.listeContainer{
+  color: aliceblue;
+}
+
+.tirageButton{
+  padding: 10%;
+  margin: 10%;
+  height: 70px;
+  border-radius: 25% 10% !important;
+}
+
+.divButton{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 55px;
+  align-self: center;
+  border-radius: 25% 10% !important;
+}
+.listeItems{
+  align-self: center;
+  padding: 3%;
+}
+
+.teamContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.playerCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 40%;
+  border-radius: 2%;
+  padding: 3%;
+  background-color: #212529;
+  margin: 2%;
+}
+
+.inputTeam{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.setNameButton{
+  margin-top: 10px;
+}
+
+.groupContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.groupListContainer{
+  display: flex;
+  flex-direction: row;
+  background-color: #212529;
+  border-radius: 2%;
+  width: 400%;
+}
+
+.fontTableGroup{
+  color: aliceblue;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-right: solid !important;
+  border-color: #191c1f !important;
+  border-width: 0.1px !important;
+}
+
+.underLineTableGroup{
+  border-color: #191c1f;
+}
+
+.headerName{
+  /* color:rgba(255, 127, 80, 0.685); */
+  color:rgb(0, 132, 255)
+}
+
+.headerGame{
+  /* color:rgb(134, 84, 65); */
+  color:rgba(0, 132, 255, 0.712)
+}
+
+.headerTotal{
+  color:rgba(80, 255, 109, 0.637);
+}
+
+.headerTableGroup{
+  border-color: #161718;
+  background-color: #161718;
+}
+
+
+.tableContainer{
+    background-color: #212529;
+}
+
+.groupSecondary{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+  font-size:250%;
+  color: rgb(22, 22, 22);
+  font-family: blankRiver;
+  font-weight: bolder;
+}
+
+.noEquip{
+  display: flex;
+  color: rgba(240, 248, 255, 0.425);
+}
+
+.modalHeader{
+  display: flex;
+  flex-direction: row;
+  color: aliceblue;
+}
+
+.closeModal{
+  display: flex;
+  margin-left: 10%;
+  float: right;
+}
+
+.modalBody{
+  display: flex;
+  padding-top: 10%;
+  flex-direction: column;
+}
+
+.modalTitle{
+  width: 400px;
+
+}
+
+.buttonModal{
+  float: right;
 }

@@ -1,12 +1,11 @@
 import './App.css';
 import Login from './components/users/login';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Games from './components/games';
 function App() {
 
   return (
     <>
-      <ToastContainer/>
       <Login></Login>
     </>
   );
