@@ -54,7 +54,9 @@ export default function Root() {
                     </NavLink>
                 </NavItem>
                 <NavItem className='navItem'>
-                    <NavLink to="/logged">Arbre de tournoi</NavLink>
+                    <NavLink>
+                        <Link to="/logged/bracket">Arbre de tournoi</Link>
+                    </NavLink>
                 </NavItem>
                 {user.isAdmin ?
                     <NavItem className='navItem'>

@@ -20,6 +20,7 @@ import Login from './components/users/login';
 import Games from './components/games';
 import Tirage from './components/admin/tirage';
 import Groups from './components/admin/groups';
+import Brackets from './components/admin/brackets';
 import '../src/assets/fonts/blankRiver.ttf'
 
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "groups",
         element: <Groups/>,
+      },
+      {
+        path: "bracket",
+        element: <Brackets/>,
       },
     ],
   },

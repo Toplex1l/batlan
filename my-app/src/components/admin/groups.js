@@ -9,7 +9,7 @@ import { Formik, Form, Field } from 'formik';
 const Groups = () => {
     const [groupOne, setGroupOne] = useState();
     const [groupTwo, setGroupTwo] = useState();
-    const [active, toggle] = useState(false)
+    const [active, toggle] = useState(false);
     const [toPush, setToPush] = useState();
     const user = useSelector(state => state)
     const token = user.token

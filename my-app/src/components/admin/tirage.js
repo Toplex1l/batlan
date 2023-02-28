@@ -105,6 +105,7 @@ const Tirage = () => {
 
     if(teams){
         teamsList = teams.map((team, index) => {
+            console.log("flag", team)
             return(
                 <>
                     <div >{team.name} : </div>
