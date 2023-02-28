@@ -3,7 +3,7 @@ version: "3.8"
 services:
   app:
     container_name: my-app
-    image: my-app
+    image: toplex1l/my-app
     build:
       context: .
       target: development
