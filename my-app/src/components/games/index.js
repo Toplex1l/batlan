@@ -10,7 +10,7 @@ const Games = () => {
                     className="carousel"
                     items={items}
                 />
-                <div className="text"> More games coming soon...</div>
+                <div className="text"> More games coming soon..</div>
             </div>
 
         </>
